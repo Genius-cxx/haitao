@@ -1,8 +1,24 @@
 //cookie
 $(function () {
+    var strLis=`  <li><a href="#"><span></span>会员中心</a></li>
+                        <li><a href="#"><span></span>联系客服</a></li>
+                        <li><a href="#"><span></span>个人资料</a></li>
+                        <li><a href="#"><span></span>收货地址</a></li>
+                        <li><a href="#"><span></span>站内消息</a></li>
+                        <li><a href="#" class="outLogin"><span></span>退出登录</a></li>
+                   `;
     if(!($.cookie("username")=="")){
-            $(".username").html($.cookie("username"));
+        $(".header_right>ul>li:eq(5)>ul").html(strLis);
+        $(".username").html($.cookie("username"));
+        $(".main_top>p").html($.cookie("username"))
+    }else{
+        $(".username").html(" 登录▾");
+
     }
+    $(".outLogin").on("click",function(){
+        $.cookie("username","");
+        location.reload();
+    })
     //置顶
         var $height=$(".nav_right>span").offset().top;
         $(window).scroll(function(){
