@@ -22,10 +22,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     mysqli_query($conn,"SET NAMES UTF8");
 
     //4.准备sql语句
-    $sql="  SELECT * FROM userinfo WHERE uname='".$uname."' AND upwd='".$upwd."'";
+    $sql="  SELECT  `uname`,`upwd`  FROM userinfo WHERE uname='".$uname."' AND upwd='".$upwd."'";
 
     //5.执行sql语句
-
    $result= $conn->query($sql);
    //6.判断结果
     if ($result->num_rows>=1){

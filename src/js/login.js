@@ -62,7 +62,10 @@ $(function(){
             $.post("http://127.0.0.1:8080/haitao/server/login.php", $("form").serialize(), function (res) {
                 alert(res.msg);
                 if (res.status==1){
-                    location="zhuye.html"
+                    var  userName = $("input[name=uname]").val();
+
+                    $.cookie("username",userName)
+                    location="zhuye.html";
                 }
             }, "json")
             return false;

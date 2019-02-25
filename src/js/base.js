@@ -1,5 +1,8 @@
 //cookie
 $(function () {
+    if(!($.cookie("username")=="")){
+            $(".username").html($.cookie("username"));
+    }
     //置顶
         var $height=$(".nav_right>span").offset().top;
         $(window).scroll(function(){
@@ -37,4 +40,5 @@ $(function () {
 
 
     })
+
 })
