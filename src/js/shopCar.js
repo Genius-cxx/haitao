@@ -34,21 +34,20 @@ $(function(){
         if(parseInt($(this).parents("li").find(".much").html())<=1){
             $(this).parents("li").find(".much").html("1");
         }else{
-           $(this).parents("li").find(".much").html(parseInt($(".much").html())-1)
+           $(this).parents("li").find(".much").html(parseInt($(this).parents("li").find(".much").html())-1)
         }
 
     })
     $("#ul li .add1").on("click",function () {
         $(this).parents("li").find(".much").html(parseInt($(this).parents("li").find(".much").html())+1)
     })
-
+    var addNum= $.cookie("goodList")
     $("#ul li .delete").on("click",function () {
         $(this).parents("li").remove();
-        
         goodsNum--;
-        $.cookie("goodList",goodsNum);
+        addNum--;
         $.cookie("goodList",addNum,{ expires: 7 })
-   
+        location.reload()
     })
 
     // 算账函数
@@ -89,7 +88,7 @@ $(function(){
            if(parseInt($("#zj").html())==0){
                $(".addCar").fadeIn(500).fadeOut(1000);
            }else {
-                alert("正在跳转")
+                alert("正在跳转...");
            }
        })
 
@@ -103,7 +102,7 @@ $(function(){
 
 
 
-    //点击结算跳转
+
 
 
 
