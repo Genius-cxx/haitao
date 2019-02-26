@@ -1,8 +1,5 @@
-/**
- * Created by Lenovo on 2019/2/15.
- */
-$(function() {
 
+$(function() {
 
     //搜索框点击
     $(".middle p a").on("click", function () {

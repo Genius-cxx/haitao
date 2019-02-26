@@ -138,6 +138,8 @@ header span{
     width: 200px;
 }
 .right a{
+
+    cursor: pointer;
     display: block;
     height: 34px;
     width: 90px;
@@ -149,6 +151,8 @@ header span{
     font-size: 14px;
 }
 .right a>span{
+
+    cursor: pointer;
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -213,12 +217,12 @@ header span{
 
 .main{
     width: 100%;
-    min-height: 800px;
+    min-height: 500px;
     height: auto;
 }
 .main_content{
     padding: 100px;
-    min-height: 800px;
+    min-height: 500px;
     height: auto;
     background: #eee;
 }
@@ -228,7 +232,7 @@ header span{
 }
 .main_goods{
     width: 100%;
-    min-height: 800px;
+    min-height: 500px;
     height: auto;
     margin: 0 auto;
     padding: 20px;

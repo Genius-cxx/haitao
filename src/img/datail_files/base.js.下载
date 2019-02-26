@@ -63,8 +63,6 @@ $(function () {
         $(".username").html(" 登录▾");
         $("#add").on("click",function(){
             $.cookie("goodList",0)
-
-        }).bind(function () {
             alert(" 请先登录")
         })
     }

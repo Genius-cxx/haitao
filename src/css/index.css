@@ -1,70 +1,4 @@
-header{
-    height: 34px;
-    width: 100%;
-    background: #333;
-}
-header span{
-    color: #444;
-}
-.header_wrap{
-    width: 1100px;
-    height: 34px;
-    margin: 0 auto;
-    /*background: red;*/
-    padding-right: 50px;
-}
-.header_wrap>ul li{
-    line-height: 34px;
-    float: left;
-}
-.header_wrap>ul li a{
-    color: #ccc;
-    padding: 0 10px;
-    font-size: 14px;
-}
-.header_right{
-    float: right;
-}
-.header_right>ul>li{
-    float: left;
-    line-height: 30px;
-}
-.header_right>ul>li:nth-of-type(1),.header_right>ul>li:nth-of-type(3),.header_right>ul>li:nth-of-type(4){
-    width: 90px;
-}
-.header_right>ul>li:nth-of-type(5){
-    width: 60px;
-}
-.header_right ul li ul{
-    position: absolute;
-    display: none;
-    top: 32px;
-    box-shadow: 0 0 5px #ccc;
-   z-index: 100;
 
-}
-.header_right>ul>li>ul li{
-    width: 110px;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    display: block;
-    height: 40px;
-    text-align: center;
-
-
-}
-.header_right>ul>li>ul li a{
-    color: #666;
-    line-height: 40px;
-}
-.header_right>ul>li>ul li a:hover{
-    color:#de3c5b;
-}
-.header_right ul li a{
-    color: #ccc;
-    padding: 0 10px;
-    font-size: 14px;
-}
 .banner{
     width: 100%;
     height: 100px;
@@ -150,6 +84,7 @@ header span{
     width: 90px;
 }
 .right a{
+    cursor: pointer;
     display: block;
     height: 34px;
     width: 90px;
@@ -939,66 +874,3 @@ mark{
 
 
 
-
-footer{
-    width: 100%;
-    height: 180px;
-    background: #333;
-    padding: 30px 0;
-}
-footer p{
-    text-align: center;
-    font-size: 14px;
-    color: #fff;
-    padding: 5px;
-}
-footer p a{
-    color: #fff;
-    margin: 5px;
-}
-.nav_right{
-    position: fixed;
-    top: 40%;
-    right: 10px;
-
-}
-.nav_right ul li{
-    margin-top: 5px;
-    background: #666;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    width: 45px;
-    height: 45px;
-    border-radius: 5px;
-
-}
-.nav_right ul li img{
-    margin-left: 14px;
-    margin-top:  5px;
-    width: 18px;
-    height: 16px;
-}
-.nav_right a{
-    font-size: 14px;
-    color: #fff;
-}
-.nav_right li:hover{
-    background: #000;
-    cursor: pointer;
-}
-.nav_right span{
-    margin-top: 150px;
-    display: block;
-    height: 40px;
-    width: 40px;
-    background: #000;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 50%;
-    line-height: 40px;
-    font-size: 18px;
-    display: none;
-    cursor: pointer;
-}

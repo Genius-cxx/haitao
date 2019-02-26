@@ -22,7 +22,7 @@ window.onload=function(){
     oForm.uyzm.onfocus=function(){
         oYzm.innerHTML=randomCode(5);
     }
-    
+
 }
 $(function(){
     $(".header_right>ul>li").on("mouseenter",function(){
@@ -53,7 +53,7 @@ $(function(){
                 required: "密码不能为空"
             },
             uyzm:{
-                required:"验证码不能为空",
+                required:"验证码不能为空"
 
             }
         },
@@ -64,7 +64,7 @@ $(function(){
                 if (res.status==1){
                     var  userName = $("input[name=uname]").val();
 
-                    $.cookie("username",userName)
+                    $.cookie("username",userName,{ expires: 7 })
                     location="zhuye.html";
                 }
             }, "json")

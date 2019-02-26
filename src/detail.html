@@ -6,11 +6,20 @@
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/detail.css"/>
     <link rel="stylesheet" href="fonts/icon.css"/>
+    <link rel="stylesheet" href="css/jquery.exzoom.css"/>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/lib/localization/cookie.js"></script>
     <script src="js/detail.js"></script>
     <script src="js/base.js"></script>
-
+    <script src="js/lib/jquery.exzoom.js"></script>
+    <style>
+        #exzoom {
+            width: 400px;
+            /*height: 400px;*/
+            margin-left: -40px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 <div class="addCar">已加入购物车</div>
@@ -121,7 +130,7 @@
                 <a href="">costco</a></p>
         </div>
         <div class="right">
-            <a href="shopCar.html"><img src="img/购物车.png" alt=""/>购物车 <span>0</span></a>
+            <a><img src="img/购物车.png" alt=""/>购物车 <span>0</span></a>
         </div>
     </div>
 </div>
@@ -141,11 +150,19 @@
         <a href="#"><img src="img/我%20的.png" alt=""/><span></span>我的海淘</a>
     </div>
 </div>
+
 <div class="main">
     <div class="main_content">
         <div class="main_left">
-            <a href="#"><img src="img/datail_goods.jpg" alt=""/></a>
-            <div>
+            <div class="exzoom" id="exzoom">
+                <!--大图区域-->
+                <div class="exzoom_img_box">
+                    <ul class='exzoom_img_ul'>
+                        <li><img src="img/datail_goods.jpg"/></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px">
                 <a href="#">●收入文章</a>
                 <a href="#">★收藏</a>
                 <a href="#">☺&nbsp;1</a>
@@ -302,5 +319,11 @@
     <p>上海飞境信息科技有限公司 版权所有 备案号 （沪ICP备14025008号）&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/gongshangicon.gif" alt="" style="height: 20px;width: 20px"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/gongan.png" alt=""/>  &nbsp;&nbsp;        网安备31011502002285</p>
     <p>上海市嘉定区沪宜公路1185号7楼715室</p>
 </footer>
+
 </body>
 </html>
+<script type="text/javascript">
+    $("#exzoom").exzoom({
+        autoPlay: false
+    });//方法调用，务必在加载完后执行
+</script>

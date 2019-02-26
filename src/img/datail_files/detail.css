@@ -160,7 +160,6 @@
     left: 0px;
     bottom: 0px;
     background: #fff;
-    z-index: 1000;
 }
 .nav_left>div{
     height: 120px;
@@ -546,3 +545,19 @@
 
 
 
+
+.addCar{
+    height: 30px;
+    width: 120px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background: #333;
+    font-weight: 600;
+    position: fixed;
+    left: 45%;
+    top: 40%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #ddd;
+    display: none;
+}

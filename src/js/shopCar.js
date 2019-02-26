@@ -19,7 +19,7 @@ $(function(){
     for(var i=0;i<(parseInt($.cookie("goodList")));i++){
     	str1+=`<li>
 				<input type='checkbox'>
-				<img src='${$goodsObj[0].imgSrc}'>
+				<img src='${"img/datail_goods.jpg"}'>
 				<p><a href="detail.html">${$goodsObj[0].shopname}</a><i>包邮</i></p>
 				<p><b>${$goodsObj[0].tuangoujia}</b><span><i>V</i>${$goodsObj[0].moreMoney}</span></p>
 				<div><button class='reduce'>-</button><span class="much">1</span><button class='add1'>+</button></div>
@@ -85,9 +85,14 @@ $(function(){
 
  
     // 点击算账
-    $("#sub").click(function () {
-        alert("正在前往...")
-    })
+       $("#sub").click(function () {
+           if(parseInt($("#zj").html())==0){
+               $(".addCar").fadeIn(500).fadeOut(1000);
+           }else {
+                alert("正在跳转")
+           }
+       })
+
     // 追加点击事件 判断是否选中 被选中所有的父级li加和
     var oInptCheckLis=document.querySelectorAll("#ul>li input[type=checkbox]");
     $("#ul li input[type=checkbox]").on("click",function () {
