@@ -444,19 +444,19 @@ header span{
 }
 .introduce{
     width: 100%;
-    min-height: 14900px;
+    min-height: 14550px;
     background: #eee;
 }
 .introduce_content{
     width: 1100px;
-    min-height: 14880px;
+    min-height: 14520px;
     margin: 0 auto;
 }
 .introduce_left{
     display: flex;
     flex-direction: column;
     width: 700px;
-    min-height: 14880px;
+    min-height: 14520px;
     background: #fff;
     float: left;
     /*padding: 15px;*/

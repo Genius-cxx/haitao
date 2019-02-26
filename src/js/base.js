@@ -55,7 +55,7 @@ $(function () {
 
         $(".right>a>span").html(addNum);
     }else{
-        
+
         $(".username").html(" 登录▾");
         $("#add").on("click",function(){
             $.cookie("goodList",0)
