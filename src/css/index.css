@@ -453,6 +453,10 @@
 .tt_content div p {
     display: none;
     color: #de3c5b;
+    cursor: pointer;
+}
+.tt_content div p:hover{
+    text-decoration: underline;
 }
 .pro{
     width: 100%;

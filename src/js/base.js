@@ -2,30 +2,9 @@
 $(function () {
 
     //置顶
-    function myScroll(){
-        //  ie9以上, google,火狐都能用
-        if(window.pageXOffset!=null){
-            return {
-                "left":window.pageXOffset,
-                "top":window.pageYOffset
-            }
-        }else if(document.compatMode=="CSS1Compat"){
-            // 标准 DTD (有声明头)
-            return {
-                "left":document.documentElement.scrollLeft,
-                "top":document.documentElement.scrollTop
-            }
-        }
-        // 非标准 没有 DTD (没有声明头)
-        return {
-            "left":document.body.scrollLeft,
-            "top":document.body.scrollTop
-        }
-    }
-        var $height=$(".nav_right>span").offset().top;
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         $(window).scroll(function(){
-            var $scrollHeight=$(this).scrollTop();
-            if($scrollHeight>1){
+            if(scrollTop>1){
                 $(".nav_right>span").css("display","block")
             }else{
                 $(".nav_right>span").css("display","none")
@@ -33,7 +12,7 @@ $(function () {
         })
         //头部显示隐藏
         $(".nav_right>span").on("click",function(){
-            $(window).scrollTop(0);
+            scrollTop=0;
         })
         $(".header_right>ul>li").on("mouseenter",function(){
             $(this).find("ul").show();

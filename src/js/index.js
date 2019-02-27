@@ -1,5 +1,4 @@
-
-$(function() {
+$(function () {
 
     //搜索框点击
     $(".middle p a").on("click", function () {
@@ -10,9 +9,9 @@ $(function() {
 
     //搜索置顶
     $(window).scroll(function () {
-        var $scrollHeight = $(this).scrollTop();
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-        if ($scrollHeight > 135) {
+        if (scrollTop > 135) {
             $(".header_search").css({
                 "position": " fixed",
                 "top": 0,
@@ -40,10 +39,9 @@ $(function() {
         })
 
 
-
     })
 
-//tab栏
+    //tab栏
     $(".pro_nav ul>li").on("click", function () {
         $(this).children("a").addClass("CC").parent().siblings().children("a").removeClass("CC");
         $(".goods>ul").eq($(this).index()).show().siblings().hide();
@@ -59,24 +57,30 @@ $(function() {
         $(this).find("ul").stop().fadeOut(300);
     })
 
-    //滚动条
-
-    function dSQ2(el){
-        var $number = 1;
-        var b=setInterval(function () {
-            $number++;
-            el.eq($number).slideDown(500).siblings().hide()
-            if ($number >= 5) {
-                $number = -1;
-            }
-
-        }, 4000)
+    // 头条广告滚动条
+    // var $number = 1;
+    function tt() {
+        $number++;
+        $(".tt_content>div p").eq($number).slideDown(500).siblings().hide()
+        if ($number >= 5) {
+            $number = -1;
+        }
     }
-    dSQ2($(".tt_content>div p"));
+    //启动滚动条
+    var b = setInterval(tt, 2000)
+
+    //移入滚动停止 移除继续
+    $(".tt_content>div p").on("mouseenter", function () {
+        clearInterval(b);
+    }).on("mouseleave", function () {
+        b = setInterval(tt, 2000)
+    })
+
+
     //轮播函数
     function autoPlay() {
         var num = 1;
-        var aa=setInterval(function () {
+        var aa = setInterval(function () {
             $(".main_content>ul>li").eq(num).addClass("currentLi").siblings("li").removeClass("currentLi");
             num++;
             if (num == 1) {
@@ -117,8 +121,8 @@ $(function() {
 
         }, 7000);
     }
-    //轮播图
 
+    //轮播图
     autoPlay();
 
 })
