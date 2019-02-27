@@ -48,7 +48,7 @@ $(function(){
         goodsNum--;
         addNum--;
         $.cookie(goodList,addNum,{ expires: 7 })
-        location.reload()
+        $(".right>a>span").html(addNum);
     })
 
     // 算账函数
@@ -67,6 +67,7 @@ $(function(){
             }else{
                 $(".add1").eq(i).prop("disabled",false);
                 $(".reduce").eq(i).prop("disabled",false);
+
                  //任意取消就取消全选
                 $(".car_top input[type=checkbox]").prop("checked",$(oInptCheckLis[i]).prop("checked"))
             }

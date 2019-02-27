@@ -12,7 +12,7 @@ $(function() {
     $(window).scroll(function () {
         var $scrollHeight = $(this).scrollTop();
 
-        if ($scrollHeight > 150) {
+        if ($scrollHeight > 135) {
             $(".header_search").css({
                 "position": " fixed",
                 "top": 0,
@@ -39,45 +39,44 @@ $(function() {
             $(window).scrollTop(0);
         })
 
-        //tab栏
-        $(".pro_nav ul>li").on("click", function () {
-            $(this).children("a").addClass("CC").parent().siblings().children("a").removeClass("CC");
-            $(".goods>ul").eq($(this).index()).show().siblings().hide();
-            return false;
-        })
-
-
-        //头移入显示
-        $(".header_right>ul>li").on("mouseenter", function () {
-            $(this).find("ul").stop().fadeIn(300);
-        })
-        $(".header_right>ul>li").on("mouseleave", function () {
-            $(this).find("ul").stop().fadeOut(300);
-        })
-
-        //滚动条
-
-        var $number = 1;
-        setInterval(function () {
-            $number++;
-            $(".tt_content>p span").eq($number).stop().slideDown(500).siblings().hide();
-            if ($number >= 4) {
-                $number = 0;
-            }
-        }, 3000)
-
-
-
-
 
 
     })
 
+//tab栏
+    $(".pro_nav ul>li").on("click", function () {
+        $(this).children("a").addClass("CC").parent().siblings().children("a").removeClass("CC");
+        $(".goods>ul").eq($(this).index()).show().siblings().hide();
+        return false;
+    })
 
+
+    //头移入显示
+    $(".header_right>ul>li").on("mouseenter", function () {
+        $(this).find("ul").stop().fadeIn(300);
+    })
+    $(".header_right>ul>li").on("mouseleave", function () {
+        $(this).find("ul").stop().fadeOut(300);
+    })
+
+    //滚动条
+
+    function dSQ2(el){
+        var $number = 1;
+        var b=setInterval(function () {
+            $number++;
+            el.eq($number).slideDown(500).siblings().hide()
+            if ($number >= 5) {
+                $number = -1;
+            }
+
+        }, 4000)
+    }
+    dSQ2($(".tt_content>div p"));
     //轮播函数
     function autoPlay() {
         var num = 1;
-        setInterval(function () {
+        var aa=setInterval(function () {
             $(".main_content>ul>li").eq(num).addClass("currentLi").siblings("li").removeClass("currentLi");
             num++;
             if (num == 1) {
@@ -116,7 +115,7 @@ $(function() {
                 num = 0;
             }
 
-        }, 5000);
+        }, 7000);
     }
     //轮播图
 

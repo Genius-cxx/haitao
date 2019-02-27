@@ -2,6 +2,26 @@
 $(function () {
 
     //置顶
+    function myScroll(){
+        //  ie9以上, google,火狐都能用
+        if(window.pageXOffset!=null){
+            return {
+                "left":window.pageXOffset,
+                "top":window.pageYOffset
+            }
+        }else if(document.compatMode=="CSS1Compat"){
+            // 标准 DTD (有声明头)
+            return {
+                "left":document.documentElement.scrollLeft,
+                "top":document.documentElement.scrollTop
+            }
+        }
+        // 非标准 没有 DTD (没有声明头)
+        return {
+            "left":document.body.scrollLeft,
+            "top":document.body.scrollTop
+        }
+    }
         var $height=$(".nav_right>span").offset().top;
         $(window).scroll(function(){
             var $scrollHeight=$(this).scrollTop();
@@ -38,7 +58,7 @@ $(function () {
         if($.cookie(goodList)>0){
 
             addNum=$.cookie(goodList);
-            console.log(addNum);
+            //console.log(addNum);
         }else{
             addNum=0;
             $.cookie(goodList,addNum);
@@ -48,7 +68,7 @@ $(function () {
         })
         $.cookie(goodList,addNum,{ expires: 7 })
         $(".header_right>ul>li:eq(5)>ul").html(strLis);
-        $(".username").html($.cookie("username"));
+        $(".username").html($.cookie("username")+"▾");
         $(".main_top>p").html($.cookie("username"));
 
         //点击商品数量++
