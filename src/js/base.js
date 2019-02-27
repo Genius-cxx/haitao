@@ -2,18 +2,19 @@
 $(function () {
 
     //置顶
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        $(window).scroll(function(){
-            if(scrollTop>1){
-                $(".nav_right>span").css("display","block")
-            }else{
-                $(".nav_right>span").css("display","none")
-            }
-        })
-        //头部显示隐藏
-        $(".nav_right>span").on("click",function(){
-            scrollTop=0;
-        })
+    var $height=$(".nav_right>span").offset().top;
+    $(window).scroll(function(){
+        console.log($height);
+        var $scrollHeight=$(this).scrollTop();
+        if($scrollHeight>10){
+            $(".nav_right>span").css("display","block")
+        }else{
+            $(".nav_right>span").css("display","none")
+        }
+    })
+    $(".nav_right>span").on("click",function(){
+        $(window).scrollTop(0);
+    })
         $(".header_right>ul>li").on("mouseenter",function(){
             $(this).find("ul").show();
         })
@@ -71,5 +72,10 @@ $(function () {
         $.cookie("username","");
         //$.cookie("goodList","");
         location.reload();
+    })
+    //搜索框点击
+    $(".middle p a").on("click", function () {
+        $(".middle input").val($(this).html());
+        return false;
     })
 })

@@ -1,16 +1,8 @@
 $(function () {
 
-    //搜索框点击
-    $(".middle p a").on("click", function () {
-        $(".middle input").val($(this).html());
-        return false;
-    })
-
-
     //搜索置顶
     $(window).scroll(function () {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-
         if (scrollTop > 135) {
             $(".header_search").css({
                 "position": " fixed",
@@ -58,7 +50,7 @@ $(function () {
     })
 
     // 头条广告滚动条
-    // var $number = 1;
+     var $number = 0;
     function tt() {
         $number++;
         $(".tt_content>div p").eq($number).slideDown(500).siblings().hide()
@@ -67,63 +59,74 @@ $(function () {
         }
     }
     //启动滚动条
-    var b = setInterval(tt, 2000)
+    var b = setInterval(tt, 3000)
 
     //移入滚动停止 移除继续
     $(".tt_content>div p").on("mouseenter", function () {
         clearInterval(b);
     }).on("mouseleave", function () {
-        b = setInterval(tt, 2000)
+        b = setInterval(tt, 3000)
     })
 
 
-    //轮播函数
-    function autoPlay() {
-        var num = 1;
-        var aa = setInterval(function () {
-            $(".main_content>ul>li").eq(num).addClass("currentLi").siblings("li").removeClass("currentLi");
-            num++;
-            if (num == 1) {
-                $(".main").css({
-                    "backgroundImage": "url(./img/lunbo01.jpg)",
-                    "backgroundColor": "#ff215a"
-                })
-            }
-            if (num == 2) {
-                $(".main").css({
-
-                    "backgroundImage": "url(./img/lunbo02.jpg)",
-                    "backgroundColor": "#d02b3b"
-                })
-            }
-            if (num == 3) {
-                $(".main").css({
-
-                    "backgroundImage": "url(./img/lunbo03.jpg)",
-                    "backgroundColor": "#c21b2f"
-                })
-            }
-            if (num == 4) {
-                $(".main").css({
-
-                    "backgroundImage": "url(./img/lunbo04.jpg)",
-                    "backgroundColor": "#f0969f"
-                })
-            }
-            if (num == 5) {
-                $(".main").css({
-                    "backgroundColor": "#E83D35",
-                    "backgroundImage": "url(./img/lunbo05.jpg)"
-
-                })
-                num = 0;
-            }
-
-        }, 7000);
-    }
 
     //轮播图
-    autoPlay();
+    var num = 1;
+    function lbplay() {
+        $(".main_content>ul>li").eq(num).addClass("currentLi").siblings("li").removeClass("currentLi");
+        num++;
+        if (num == 1) {
+            $(".main").css({
+                "backgroundImage": "url(./img/lunbo01.jpg)",
+                "backgroundColor": "#ff215a"
+            })
+        }
+        if (num == 2) {
+            $(".main").css({
+
+                "backgroundImage": "url(./img/lunbo02.jpg)",
+                "backgroundColor": "#d02b3b"
+            })
+        }
+        if (num == 3) {
+            $(".main").css({
+
+                "backgroundImage": "url(./img/lunbo03.jpg)",
+                "backgroundColor": "#c21b2f"
+            })
+        }
+        if (num == 4) {
+            $(".main").css({
+
+                "backgroundImage": "url(./img/lunbo04.jpg)",
+                "backgroundColor": "#f0969f"
+            })
+        }
+        if (num == 5) {
+            $(".main").css({
+                "backgroundColor": "#E83D35",
+                "backgroundImage": "url(./img/lunbo05.jpg)"
+
+            })
+            num = 0;
+        }
+
+    }
+
+
+        var aa = setInterval(lbplay,3000);
+
+
+
+    $(".main_content").on("mouseenter",function(){
+        clearInterval(aa);
+    }).on("mouseleave",function(){
+        aa=setInterval(lbplay,3000);
+    })
+    $(".main_content>ul>li").on("click", function () {
+        num=$(this).index();
+        lbplay();
+    })
 
 })
 

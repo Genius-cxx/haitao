@@ -49,6 +49,9 @@ $(function(){
         addNum--;
         $.cookie(goodList,addNum,{ expires: 7 })
         $(".right>a>span").html(addNum);
+        if(addNum==0){
+            location.reload()
+        }
     })
 
     // 算账函数
@@ -100,15 +103,6 @@ $(function(){
         AllMoney();
     });
    
-
-
-
-
-
-
-
-
-
 
 
 })
