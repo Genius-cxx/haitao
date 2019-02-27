@@ -32,16 +32,21 @@ $(function () {
                         <li><a href="#" class="outLogin"><span></span>退出登录</a></li>
                    `;
     //如果cookie username不为空
+
     if(!($.cookie("username")==""||$.cookie("username")==undefined)){
-        if($.cookie("goodList")>0){
-            addNum=$.cookie("goodList");
+        var goodList=$.cookie("username");
+        if($.cookie(goodList)>0){
+
+            addNum=$.cookie(goodList);
+            console.log(addNum);
         }else{
             addNum=0;
+            $.cookie(goodList,addNum);
         }
         $(".right>a").on("click",function(){
             location.href="shopCar.html"
         })
-        $.cookie("goodList",addNum,{ expires: 7 })
+        $.cookie(goodList,addNum,{ expires: 7 })
         $(".header_right>ul>li:eq(5)>ul").html(strLis);
         $(".username").html($.cookie("username"));
         $(".main_top>p").html($.cookie("username"));
@@ -49,12 +54,9 @@ $(function () {
         //点击商品数量++
         $("#add").on("click", function () {
             addNum++;
-            $.cookie("goodList",addNum,{ expires: 7 })
+            $.cookie(goodList,addNum,{ expires: 7 })
             $(".right>a>span").html(addNum);
-            console.log(addNum);
-            console.log($.cookie("goodList"));
         })
-
         $(".right>a>span").html(addNum);
     }else{
         $(".right>a").on("click",function(){
@@ -62,13 +64,13 @@ $(function () {
         })
         $(".username").html(" 登录▾");
         $("#add").on("click",function(){
-            $.cookie("goodList",0)
+            $.cookie(goodList,0)
         })
     }
     //点击退出清除信息
     $(".outLogin").on("click",function(){
         $.cookie("username","");
-        $.cookie("goodList","");
+        //$.cookie("goodList","");
         location.reload();
     })
 })

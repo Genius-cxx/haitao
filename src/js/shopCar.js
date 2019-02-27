@@ -3,7 +3,8 @@
  */
 $(function(){
     //判断购物车是否有商品
-    if($.cookie("goodList")>0){
+    var goodList=$.cookie("username");
+    if($.cookie(goodList)>0){
         $(".main_goods").css("display","block");
         $(".main_content").css("display","none");
     }else{
@@ -12,11 +13,11 @@ $(function(){
     }
     //获取cookie商品数量和信息
     var $goodsObj= JSON.parse($.cookie("goods"));
-    var goodsNum=$.cookie("goodList");
+    var goodsNum=$.cookie(goodList);
 
     //动态添加商品
     var str1=``;
-    for(var i=0;i<(parseInt($.cookie("goodList")));i++){
+    for(var i=0;i<(parseInt($.cookie(goodList)));i++){
     	str1+=`<li>
 				<input type='checkbox'>
 				<img src='${"img/datail_goods.jpg"}'>
@@ -41,12 +42,12 @@ $(function(){
     $("#ul li .add1").on("click",function () {
         $(this).parents("li").find(".much").html(parseInt($(this).parents("li").find(".much").html())+1)
     })
-    var addNum= $.cookie("goodList")
+    var addNum= $.cookie(goodList)
     $("#ul li .delete").on("click",function () {
         $(this).parents("li").remove();
         goodsNum--;
         addNum--;
-        $.cookie("goodList",addNum,{ expires: 7 })
+        $.cookie(goodList,addNum,{ expires: 7 })
         location.reload()
     })
 
@@ -55,7 +56,7 @@ $(function(){
         var inAll=0;
         var reAll=0;   
         //遍历
-        for(var i=0;i<(parseInt($.cookie("goodList"))+1);i++){
+        for(var i=0;i<(parseInt($.cookie(goodList))+1);i++){
             if($(oInptCheckLis[i]).prop("checked")){
                 inAll+=parseInt($goodsObj[0].tuangoujia)*parseInt($("#ul li").eq(i).find(".much").html());
                 reAll+=248*parseInt($("#ul li").eq(i).find(".much").html());

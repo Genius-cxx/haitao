@@ -2,6 +2,10 @@ window.onload=function(){
     /**
      * Created by Lenovo on 2019/2/15.
      */
+    if(!($.cookie("username")==""||$.cookie("username")==undefined)){
+            alert("您已登录,如需更换账号，请先退出当前登录")
+        location="zhuye.html";
+    }
     function randomNumber(min,max){
         return min+Math.round(Math.random()*(max-min));
     }
@@ -63,8 +67,7 @@ $(function(){
                 alert(res.msg);
                 if (res.status==1){
                     var  userName = $("input[name=uname]").val();
-
-                    $.cookie("username",userName,{ expires: 7 })
+                    $.cookie("username",userName,{ expires: 7 });
                     location="zhuye.html";
                 }
             }, "json")

@@ -4,7 +4,8 @@
 $(function(){
     //�����ӹ��ﳵ ���ش����cookie
     $("#add").on("click",function () {
-        if(!($.cookie("username")==undefined)){
+        if(!($.cookie("username")==""||$.cookie("username")==undefined)){
+            var goodList=$.cookie("username");
             $(".addCar").html("已加入购物车")
             $(".addCar").stop().fadeIn(500).fadeOut(500)
             var obj={
@@ -17,7 +18,7 @@ $(function(){
             };
             //������Ʒ��Ŀ����cookie
             var arr=[];
-            for(var i=0;i<(parseInt($.cookie("goodList"))+1);i++){
+            for(var i=0;i<(parseInt($.cookie(goodList))+1);i++){
                 arr.push(obj);
             }
             $.cookie("goods",JSON.stringify(arr),{expires: 7});
