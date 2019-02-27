@@ -57,12 +57,12 @@ $(function() {
 
         //滚动条
 
-        var num1 = 1;
+        var $number = 1;
         setInterval(function () {
-            num1++;
-            $(".tt_content>p span").eq(num1).slideDown().siblings().hide();
-            if (num1 >= 5) {
-                num1 = 0;
+            $number++;
+            $(".tt_content>p span").eq($number).stop().slideDown(500).siblings().hide();
+            if ($number >= 4) {
+                $number = 0;
             }
         }, 3000)
 

@@ -32,7 +32,7 @@ $(function () {
                         <li><a href="#" class="outLogin"><span></span>退出登录</a></li>
                    `;
     //如果cookie username不为空
-    if(!($.cookie("username")=="")){
+    if(!($.cookie("username")==""||$.cookie("username")==undefined)){
         if($.cookie("goodList")>0){
             addNum=$.cookie("goodList");
         }else{
@@ -63,9 +63,6 @@ $(function () {
         $(".username").html(" 登录▾");
         $("#add").on("click",function(){
             $.cookie("goodList",0)
-
-        }).bind(function () {
-            alert(" 请先登录")
         })
     }
     //点击退出清除信息
