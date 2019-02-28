@@ -42,7 +42,7 @@ $(function () {
     if (!($.cookie("username") == "" || $.cookie("username") == undefined)) {
         var goodList = $.cookie("username");
         var data={
-            uname:goodList,
+            uname:goodList
         }
         $.ajax({
             url : "./../server/gitNum.php",

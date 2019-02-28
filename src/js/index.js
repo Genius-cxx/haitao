@@ -21,7 +21,10 @@ $(function () {
                 "top": 0,
                 "background": "#fff",
                 "opacity": ".8",
-                "z-index": 10
+                "z-index": 10,
+                "margin":0,
+                "padding-top":"10px",
+                "height":"80px"
             }).on("mouseenter", function () {
                 $(this).css("opacity", 1)
             })
@@ -31,7 +34,9 @@ $(function () {
         } else {
             $(".header_search").css({
                 "opacity": "1",
-                "position": "static"
+                "position": "static",
+                "padding":"20px 0",
+                "height": "98px"
             })
             $(".nav").css({
                 "marginTop": "0"

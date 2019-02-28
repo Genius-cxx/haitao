@@ -12,7 +12,7 @@ $(function(){
         $(".main_content").css("display","block");
     }
     //获取cookie商品数量和信息
-    var $goodsObj= JSON.parse($.cookie("goods"));
+
     var addNum=$.cookie(goodList);
 
     //动态添加商品
@@ -21,8 +21,8 @@ $(function(){
     	str1+=`<li>
 				<input type='checkbox'>
 				<img src='${"img/datail_goods.jpg"}'>
-				<p><a href="detail.html">${$goodsObj[0].shopname}</a><i>包邮</i></p>
-				<p><b>${$goodsObj[0].tuangoujia}</b><span><i>V</i>${$goodsObj[0].moreMoney}</span></p>
+				<p><a href="detail.html">235元/盒 2盒包邮装 【李小冉同款】【粉嫩肌肤 颜值焕发】Vierra 胶原蛋白胜肽口服精华 55毫升*7瓶/盒*2盒</a><i>包邮</i></p>
+				<p><b>￥718元</b><span><i>V</i>￥248元</span></p>
 				<div><button class='reduce'>-</button><span class="much">1</span><button class='add1'>+</button></div>
 				<a class='delete'> <img src="img/垃圾桶1.png" alt=""></a>
 				</li>`;
@@ -51,7 +51,7 @@ $(function(){
         //遍历
         for(var i=0;i<(parseInt($.cookie(goodList))+1);i++){
             if($(oInptCheckLis[i]).prop("checked")){
-                inAll+=parseInt($goodsObj[0].tuangoujia)*parseInt($("#ul li").eq(i).find(".much").html());
+                inAll+=718*parseInt($("#ul li").eq(i).find(".much").html());
                 $("#ul li").eq(i).find(".delete").css("display","none");
                 reAll+=248*parseInt($("#ul li").eq(i).find(".much").html());
                 $("#sub").prop("disabled",false);

@@ -110,23 +110,25 @@ footer p a{
 }
 .nav_right ul li{
     margin-top: 5px;
+    padding-top: 5px;
     background: #666;
     text-align: center;
     display: flex;
     flex-direction: column;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
 
 }
 .nav_right ul li img{
-    margin-left: 14px;
+    margin-left: 12px;
     margin-top:  5px;
-    width: 18px;
-    height: 16px;
+    margin-top: 2px;
+    width: 16px;
+    height: 14px;
 }
 .nav_right a{
-    font-size: 14px;
+    font-size: 10px;
     color: #fff;
 }
 .nav_right li:hover{
@@ -136,8 +138,8 @@ footer p a{
 .nav_right span{
     margin-top: 150px;
     display: block;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     background: #666;
     color: #fff;
     font-weight: bold;
@@ -147,6 +149,9 @@ footer p a{
     font-size: 18px;
     display: none;
     cursor: pointer;
+}
+.nav_right span img{
+    margin-bottom: 3px;
 }
 .nav_right span:hover{
     background:#000;

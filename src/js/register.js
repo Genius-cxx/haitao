@@ -33,7 +33,7 @@ $(function(){
                 rangelength:[6,16],
                 checkedName:true,
                 remote:{
-                    url:"http://127.0.0.1:8080/zouxiunet/server/checkeUser.php",
+                    url:"./../server/checkeUser.php",
                     type:"get",
                     data:{
                         "username":function () {

@@ -73,6 +73,7 @@
     color: #888;
 }
 .middle p a:hover{
+    text-decoration: underline;
     color: #333;
 }
 .header_search .content .right{
@@ -226,7 +227,7 @@
     transition: 1s;
 }
 .shop_bottom ul li img:hover{
-    opacity: .7;
+    opacity: .9;
     transition: 1s;
     box-shadow: 10px 10px 10px #000;
 }
