@@ -14,8 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $conn = new mysqli($host, $name, $pwd, $db, $port);
         mysqli_query($conn, "set names utf8");
-        $sql = "INSERT INTO `userinfo` (`uname`,`upwd`,`uemail`)
-VALUES ('" . $UNAME . "','" . $UPWD . "','" . $UEMAIL . "');";
+        $sql = "INSERT INTO `userinfo` (`uname`,`upwd`,`uemail`,`utel`)
+VALUES ('" . $UNAME . "','" . $UPWD . "','" . $UEMAIL . "',0);";
 
        $result=$conn->query($sql);
        if ($result==1){

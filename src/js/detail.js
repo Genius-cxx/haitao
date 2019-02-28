@@ -3,9 +3,9 @@
  */
 $(function(){
     //�����ӹ��ﳵ ���ش����cookie
-    $("#add").on("click",function () {
+    $("body").on("click","#add",function () {
         if(!($.cookie("username")==""||$.cookie("username")==undefined)){
-            var goodList=$.cookie("username");
+            goodList=$.cookie("username");
             $(".addCar").html("已加入购物车")
             $(".addCar").stop().fadeIn(500).fadeOut(500)
             var obj={

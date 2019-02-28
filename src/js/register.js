@@ -73,9 +73,8 @@ $(function(){
             }
         },
         submitHandler:function () {
-
             $.ajax({
-                url:"http://127.0.0.1:8080/haitao/server/register.php",
+                url:"./../server/register.php",
                 type:"post",
                 dataType:"json",
                 data:$("form").serialize()

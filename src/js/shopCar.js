@@ -13,7 +13,7 @@ $(function(){
     }
     //获取cookie商品数量和信息
     var $goodsObj= JSON.parse($.cookie("goods"));
-    var goodsNum=$.cookie(goodList);
+    var addNum=$.cookie(goodList);
 
     //动态添加商品
     var str1=``;
@@ -24,7 +24,7 @@ $(function(){
 				<p><a href="detail.html">${$goodsObj[0].shopname}</a><i>包邮</i></p>
 				<p><b>${$goodsObj[0].tuangoujia}</b><span><i>V</i>${$goodsObj[0].moreMoney}</span></p>
 				<div><button class='reduce'>-</button><span class="much">1</span><button class='add1'>+</button></div>
-				<a class='delete'>刪除</a>
+				<a class='delete'> <img src="img/垃圾桶1.png" alt=""></a>
 				</li>`;
     }
     $("#ul").html(str1);
@@ -42,32 +42,24 @@ $(function(){
     $("#ul li .add1").on("click",function () {
         $(this).parents("li").find(".much").html(parseInt($(this).parents("li").find(".much").html())+1)
     })
-    var addNum= $.cookie(goodList)
-    $("#ul li .delete").on("click",function () {
-        $(this).parents("li").remove();
-        goodsNum--;
-        addNum--;
-        $.cookie(goodList,addNum,{ expires: 7 })
-        $(".right>a>span").html(addNum);
-        if(addNum==0){
-            location.reload()
-        }
-    })
+
 
     // 算账函数
     function AllMoney(){
         var inAll=0;
-        var reAll=0;   
+        var reAll=0;
         //遍历
         for(var i=0;i<(parseInt($.cookie(goodList))+1);i++){
             if($(oInptCheckLis[i]).prop("checked")){
                 inAll+=parseInt($goodsObj[0].tuangoujia)*parseInt($("#ul li").eq(i).find(".much").html());
+                $("#ul li").eq(i).find(".delete").css("display","none");
                 reAll+=248*parseInt($("#ul li").eq(i).find(".much").html());
                 $("#sub").prop("disabled",false);
                 $(".add1").eq(i).prop("disabled",true);
                 $(".reduce").eq(i).prop("disabled",true);
-                
+
             }else{
+                $("#ul li").eq(i).find(".delete").css("display","block");
                 $(".add1").eq(i).prop("disabled",false);
                 $(".reduce").eq(i).prop("disabled",false);
                  //任意取消就取消全选
@@ -81,12 +73,12 @@ $(function(){
     }
     //点击  商品全选
     $(".car_top input[type=checkbox]").on("click", function () {
-        $("#ul li input[type=checkbox]").prop("checked",$(".car_top input[type=checkbox]").prop("checked"))
+        $("#ul li input[type=checkbox]").prop("checked",$(".car_top input[type=checkbox]").prop("checked"));
         AllMoney();
     })
 
 
- 
+
     // 点击算账
        $("#sub").click(function () {
            if(parseInt($("#zj").html())==0){
@@ -101,8 +93,25 @@ $(function(){
     $("#ul li input[type=checkbox]").on("click",function () {
         AllMoney();
     });
-   
 
+    $("#ul li .delete").on("click",function () {
+        addNum--;
+        $.cookie(goodList, addNum,{expires: 7});
+        $(this).parents("li").remove();
+        var data={
+            utel:addNum,
+            uname:goodList
+        }
+        $.ajax({
+            url : "./../server/updataNum.php",
+            type : "post",
+            data : data
+        })
+        $(".right>a>span").html(addNum);
+        if(addNum==0){
+            location.reload()
+        }
+    })
 
 })
 
