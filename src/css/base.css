@@ -103,6 +103,9 @@ footer p a{
     position: fixed;
     top: 40%;
     right: 10px;
+    /*display: none;*/
+    transform: scale(0);
+    transition: 1s;
 
 }
 .nav_right ul li{

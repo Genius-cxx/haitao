@@ -1,8 +1,20 @@
 $(function () {
 
+    //搜索框点击
+    $(".middle p a").on("click", function () {
+        $(".middle input").val($(this).html());
+        return false;
+    })
+
+
     //搜索置顶
     $(window).scroll(function () {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if(scrollTop>15){
+            $(".nav_right>span").css("display","block")
+        }else{
+            $(".nav_right>span").css("display","none")
+        }
         if (scrollTop > 135) {
             $(".header_search").css({
                 "position": " fixed",
@@ -59,13 +71,13 @@ $(function () {
         }
     }
     //启动滚动条
-    var b = setInterval(tt, 3000)
+    var b = setInterval(tt, 2000)
 
     //移入滚动停止 移除继续
     $(".tt_content>div p").on("mouseenter", function () {
         clearInterval(b);
     }).on("mouseleave", function () {
-        b = setInterval(tt, 3000)
+        b = setInterval(tt, 4000)
     })
 
 
@@ -78,35 +90,36 @@ $(function () {
         if (num == 1) {
             $(".main").css({
                 "backgroundImage": "url(./img/lunbo01.jpg)",
-                "backgroundColor": "#ff215a"
+                "backgroundColor": "#ff215a",
+                "transition":"1s"
             })
         }
         if (num == 2) {
             $(".main").css({
-
                 "backgroundImage": "url(./img/lunbo02.jpg)",
-                "backgroundColor": "#d02b3b"
+                "backgroundColor": "#d02b3b",
+                "transition":"1s"
             })
         }
         if (num == 3) {
             $(".main").css({
-
                 "backgroundImage": "url(./img/lunbo03.jpg)",
-                "backgroundColor": "#c21b2f"
+                "backgroundColor": "#c21b2f",
+                "transition":"1s"
             })
         }
         if (num == 4) {
             $(".main").css({
-
                 "backgroundImage": "url(./img/lunbo04.jpg)",
-                "backgroundColor": "#f0969f"
+                "backgroundColor": "#f0969f",
+                "transition":"1s"
             })
         }
         if (num == 5) {
             $(".main").css({
                 "backgroundColor": "#E83D35",
-                "backgroundImage": "url(./img/lunbo05.jpg)"
-
+                "backgroundImage": "url(./img/lunbo05.jpg)",
+                "transition":"1s"
             })
             num = 0;
         }

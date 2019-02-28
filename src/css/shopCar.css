@@ -520,7 +520,7 @@ footer p a{
     border-radius: 50%;
     line-height: 40px;
     font-size: 18px;
-    display: none;
+    /*display: none;*/
     cursor: pointer;
 }
 .nav_left{
