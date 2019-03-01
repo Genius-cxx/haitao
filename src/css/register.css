@@ -211,10 +211,12 @@
     width: 200px;
     background: #ccc;
     margin-bottom: 10px;
-    letter-spacing: 5px;
+    letter-spacing: 8px;
+    background-image:url(../img/yzmbj.jpg);
+    background-size: cover;
     font-family: "Fontania";;
-    color: red;
-    font-size: 18px;
+    color: orangered;
+    font-size: 24px;
     line-height: 60px;
     text-align: center;
 }

@@ -79,7 +79,8 @@ $(function () {
 
     } else {
         $(".right>a").on("click", function () {
-            alert(" 请先登录")
+            alert(" 请先登录");
+            location="login.html";
         })
         $(".username").html(" 登录▾");
         $("#add").on("click", function () {

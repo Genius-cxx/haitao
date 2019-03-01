@@ -149,6 +149,7 @@ footer p a{
     font-size: 18px;
     display: none;
     cursor: pointer;
+    margin-left: 2px;
 }
 .nav_right span img{
     margin-bottom: 3px;

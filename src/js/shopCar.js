@@ -17,7 +17,7 @@ $(function(){
 
     //动态添加商品
     var str1=``;
-    for(var i=0;i<(parseInt($.cookie(goodList)));i++){
+    for(var i=0;i<addNum;i++){
     	str1+=`<li>
 				<input type='checkbox'>
 				<img src='${"img/datail_goods.jpg"}'>
@@ -84,7 +84,7 @@ $(function(){
            if(parseInt($("#zj").html())==0){
                $(".addCar").fadeIn(500).fadeOut(1000);
            }else {
-                alert("正在跳转...");
+                alert("恭喜您成为幸运用户,此次消费免单...");
            }
        })
 

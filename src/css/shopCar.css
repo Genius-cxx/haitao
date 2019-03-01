@@ -534,14 +534,14 @@ footer p a{
 .nav_left{
     position: fixed;
     left: -15px;
-    top: 45%;
+    top: 60%;
 }
 .nav_left ul li{
     display: block;
     width: 80px;
     height: 26px;
     text-align: center;
-    transform: rotateZ(30deg);
+    transform: rotateZ(25deg);
     border-radius: 0 10px;
     line-height: 26px;
     background: #fff;

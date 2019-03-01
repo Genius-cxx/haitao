@@ -96,35 +96,40 @@ $(function () {
             $(".main").css({
                 "backgroundImage": "url(./img/lunbo01.jpg)",
                 "backgroundColor": "#ff215a",
-                "transition":"1s"
+                "-moz-transition":"1s",
+                "-webkit-transition":"1s"
             })
         }
         if (num == 2) {
             $(".main").css({
                 "backgroundImage": "url(./img/lunbo02.jpg)",
                 "backgroundColor": "#d02b3b",
-                "transition":"1s"
+                "-moz-transition":"1s",
+                "-webkit-transition":"1s"
             })
         }
         if (num == 3) {
             $(".main").css({
                 "backgroundImage": "url(./img/lunbo03.jpg)",
                 "backgroundColor": "#c21b2f",
-                "transition":"1s"
+                "-moz-transition":"1s",
+                "-webkit-transition":"1s"
             })
         }
         if (num == 4) {
             $(".main").css({
                 "backgroundImage": "url(./img/lunbo04.jpg)",
                 "backgroundColor": "#f0969f",
-                "transition":"1s"
+                "-moz-transition":"1s",
+                "-webkit-transition":"1s"
             })
         }
         if (num == 5) {
             $(".main").css({
                 "backgroundColor": "#E83D35",
                 "backgroundImage": "url(./img/lunbo05.jpg)",
-                "transition":"1s"
+                "-moz-transition":"1s",
+                "-webkit-transition":"1s"
             })
             num = 0;
         }
